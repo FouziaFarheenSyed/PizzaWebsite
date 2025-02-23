@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Menu</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PizzaLogo</div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="/aboutus.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search your pizza..." class="search-input">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <a href="#" class="purchase-btn">Purchase</a>
+        <div class="phone">Call Us: +1 234 567 890</div>
+    </nav>
+    <br><br>
+    <section class="menu">
+        <h2>Discover Our Menu</h2>
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="pizza">Pizza</button>
+            <button class="category-btn" data-category="salads">Salads</button>
+            <button class="category-btn" data-category="pasta">Pasta</button>
+            <button class="category-btn" data-category="drinks">Drinks</button>
+        </div>
+
+        <div id="menu-container" class="menu-items">
+            <!-- Pizza (8 Cards) -->
+            <div class="card" data-category="pizza">
+                <img src="/Img/Pepperoni Pizza.jpg" alt="Pepperoni Pizza">
+                <h3>Pepperoni Pizza</h3>
+                <p>Delicious pizza with pepperoni toppings.</p>
+                <div class="price">$20</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="pizza">
+                <img src="/Img/Vegan Pizza.jpg" alt="Cheese Pizza">
+                <h3>Cheese Pizza</h3>
+                <p>Classic cheese pizza with rich flavors.</p>
+                <div class="price">$20</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="pizza">
+                <img src="/Img/Tomato-Sliced Pizza.jpg" alt="Sweet Pizza">
+                <h3>Sweet Pizza</h3>
+                <p>A unique blend of sweet toppings.</p>
+                <div class="price">$20</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="pizza">
+                <img src="/Img/Beef-Sliced Pizza.jpg" alt="Meat Pizza">
+                <h3>Meat Pizza</h3>
+                <p>A meat lover's dream pizza.</p>
+                <div class="price">$20</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <!-- 4 More Pizza Cards -->
+            <div class="card" data-category="pizza">
+                <img src="/Img/BBQ Chicken Pizza.jpg" alt="BBQ Chicken Pizza">
+                <h3>BBQ Chicken Pizza</h3>
+                <p>BBQ sauce, chicken, and cheese.</p>
+                <div class="price">$22</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="pizza">
+                <img src="/Img/Mushroom Pizza.jpg" alt="Mushroom Pizza">
+                <h3>Mushroom Pizza</h3>
+                <p>A creamy blend of mushrooms.</p>
+                <div class="price">$18</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="pizza">
+                <img src="/Img/Spicy Pepper Pizza.jpg" alt="Spicy Pepper Pizza">
+                <h3>Spicy Pepper Pizza</h3>
+                <p>Hot peppers and cheese.</p>
+                <div class="price">$19</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="pizza">
+                <img src="/Img/Veggie Pizza.jpg" alt="Veggie Pizza">
+                <h3>Veggie Pizza</h3>
+                <p>Fresh veggies and cheese.</p>
+                <div class="price">$17</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <!-- Salads (8 Cards) -->
+            <div class="card" data-category="salads">
+                <img src="/Img/Caesar Salad.jpg" alt="Caesar Salad">
+                <h3>Caesar Salad</h3>
+                <p>Fresh and healthy with parmesan.</p>
+                <div class="price">$10</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="salads">
+                <img src="/Img/Greek Salad.jpg" alt="Greek Salad">
+                <h3>Greek Salad</h3>
+                <p>Refreshing salad with feta cheese.</p>
+                <div class="price">$12</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="salads">
+                <img src="/Img/Caesar Salad.jpg" alt="Caesar Salad">
+                <h3>Caesar Salad</h3>
+                <p>Fresh and healthy with parmesan.</p>
+                <div class="price">$10</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="salads">
+                <img src="/Img/Greek Salad.jpg" alt="Greek Salad">
+                <h3>Greek Salad</h3>
+                <p>Refreshing salad with feta cheese.</p>
+                <div class="price">$12</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="salads">
+                <img src="/Img/Caesar Salad.jpg" alt="Caesar Salad">
+                <h3>Caesar Salad</h3>
+                <p>Fresh and healthy with parmesan.</p>
+                <div class="price">$10</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="salads">
+                <img src="/Img/Greek Salad.jpg" alt="Greek Salad">
+                <h3>Greek Salad</h3>
+                <p>Refreshing salad with feta cheese.</p>
+                <div class="price">$12</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="salads">
+                <img src="/Img/Caesar Salad.jpg" alt="Caesar Salad">
+                <h3>Caesar Salad</h3>
+                <p>Fresh and healthy with parmesan.</p>
+                <div class="price">$10</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+            <div class="card" data-category="salads">
+                <img src="/Img/Greek Salad.jpg" alt="Greek Salad">
+                <h3>Greek Salad</h3>
+                <p>Refreshing salad with feta cheese.</p>
+                <div class="price">$12</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+           
+
+            <!-- Pasta (8 Cards) -->
+            <div class="card" data-category="pasta">
+                <img src="/Img/Spaghetti.jpg" alt="Spaghetti">
+                <h3>Spaghetti</h3>
+                <p>Rich Italian spaghetti with sauce.</p>
+                <div class="price">$15</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="pasta">
+                <img src="/Img/Spaghetti.jpg" alt="Spaghetti">
+                <h3>Spaghetti</h3>
+                <p>Rich Italian spaghetti with sauce.</p>
+                <div class="price">$15</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="pasta">
+                <img src="/Img/Spaghetti.jpg" alt="Spaghetti">
+                <h3>Spaghetti</h3>
+                <p>Rich Italian spaghetti with sauce.</p>
+                <div class="price">$15</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="pasta">
+                <img src="/Img/Spaghetti.jpg" alt="Spaghetti">
+                <h3>Spaghetti</h3>
+                <p>Rich Italian spaghetti with sauce.</p>
+                <div class="price">$15</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="pasta">
+                <img src="/Img/Spaghetti.jpg" alt="Spaghetti">
+                <h3>Spaghetti</h3>
+                <p>Rich Italian spaghetti with sauce.</p>
+                <div class="price">$15</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="pasta">
+                <img src="/Img/Spaghetti.jpg" alt="Spaghetti">
+                <h3>Spaghetti</h3>
+                <p>Rich Italian spaghetti with sauce.</p>
+                <div class="price">$15</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="pasta">
+                <img src="/Img/Spaghetti.jpg" alt="Spaghetti">
+                <h3>Spaghetti</h3>
+                <p>Rich Italian spaghetti with sauce.</p>
+                <div class="price">$15</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="pasta">
+                <img src="/Img/Spaghetti.jpg" alt="Spaghetti">
+                <h3>Spaghetti</h3>
+                <p>Rich Italian spaghetti with sauce.</p>
+                <div class="price">$15</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+
+
+            <!-- Drinks (8 Cards) -->
+            <div class="card" data-category="drinks">
+                <img src="/Img/Lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <p>Refreshing lemon drink.</p>
+                <div class="price">$5</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="drinks">
+                <img src="/Img/Lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <p>Refreshing lemon drink.</p>
+                <div class="price">$5</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="drinks">
+                <img src="/Img/Lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <p>Refreshing lemon drink.</p>
+                <div class="price">$5</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="drinks">
+                <img src="/Img/Lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <p>Refreshing lemon drink.</p>
+                <div class="price">$5</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="drinks">
+                <img src="/Img/Lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <p>Refreshing lemon drink.</p>
+                <div class="price">$5</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="drinks">
+                <img src="/Img/Lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <p>Refreshing lemon drink.</p>
+                <div class="price">$5</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="drinks">
+                <img src="/Img/Lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <p>Refreshing lemon drink.</p>
+                <div class="price">$5</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="card" data-category="drinks">
+                <img src="/Img/Lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <p>Refreshing lemon drink.</p>
+                <div class="price">$5</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+        
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".category-btn");
+    const menuItems = document.querySelectorAll(".card");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const category = button.getAttribute("data-category");
+
+            buttons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            menuItems.forEach(item => {
+                item.style.display = item.getAttribute("data-category") === category ? "flex" : "none";
+            });
+        });
+    });
+
+    document.querySelector('[data-category="pizza"]').click();
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(./Img/pizzbg.jpg);
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(247, 181, 119, 0.8);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+/* 🔥 Jugaad Stylish Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 50px;
+    padding: 5px 12px;
+    border: 2px solid #ff4500;
+    position: relative;
+    width: 180px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Expanding effect when focused */
+.search-bar:focus-within {
+    width: 220px;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+}
+
+/* Search Input */
+.search-input {
+    border: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    background: transparent;
+}
+
+/* Search Icon */
+.search-icon {
+    font-size: 18px;
+    color: #ff4500;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+/* Responsive: Adjust search width */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 140px;
+    }
+
+    .search-bar:focus-within {
+        width: 170px;
+    }
+}
+.purchase-btn {
+    /* display: inline-block; */
+    background: #ff4500;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    /* margin-top: 15px; */
+}
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* Landing Section */
+.landing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 5%;
+}
+
+/* Left: Pizza Container */
+.pizza-container {
+    width: 70%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: url('./Img/pizzbg.jpg') no-repeat center center/cover; */
+    border-radius: 15px;
+}
+
+/* Rotating Pizza */
+.pizza-img {
+    width: 100%;
+    margin-top: 10%;
+    margin-right: 56%;
+    max-width: 500px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid orange;
+    animation: rotate 30s linear infinite;
+}
+
+/* Right: Caption Section */
+.caption {
+    width: 35%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.7); /* Transparent but readable */
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.caption h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #ff4500;
+}
+
+.caption p {
+    font-size: 18px;
+    color: black;
+}
+
+/* Order Now Button */
+.order-now {
+    display: inline-block;
+    background: #ff4500;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Rotating Animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Categories Section */
+.categories-section {
+    padding: 60px 20px;
+    background: white;
+    color: black;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.categories-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.category {
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 150px;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+}
+
+.category img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid orange;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.category img:hover {
+    transform: scale(1.2);
+}
+
+.category h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.category h3:hover {
+    color: orange;
+}
+
+.category p {
+    font-size: 14px;
+    margin-top: 5px;
+    color: gray;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .landing {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pizza-container {
+        width: 90%;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .pizza-img {
+        width: 70%;
+    }
+
+    .caption {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .categories-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f5ac5f;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #6c757d;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    color: black;
+}
+
+hr {
+    width: 90%;
+    margin: 10px auto;
+    border: 0;
+    height: 1px;
+    background: #ddd;
+}
