@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Menu</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+    <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <img class="logo-img" src="./Img/Spicy Pepper Pizza.png" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="/aboutus.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search your pizza..." class="search-input">
+                <button class="search-btn" onclick="performSearch()">🔍</button>
+            </div>
+            <a href="#" class="purchase-btn">Purchase</a>
+            <div class="phone">Call Us: +1 234 567 890</div>
+        </nav>
+
+    <section class="menu">
+        <h2>Discover Our Menu</h2>
+        <div class="category-buttons">
+            <button class="category-btn" data-category="pizza">Pizza</button>
+            <button class="category-btn" data-category="salads">Salads</button>
+            <button class="category-btn" data-category="pasta">Pasta</button>
+            <button class="category-btn" data-category="drinks">Drinks</button>
+        </div>
+
+        <div id="menu-container">
+           <!-- Pizza Category -->
+            <div class="menu-category" data-category="pizza">
+                <h3>Pizza</h3>
+                <div class="menu-items">
+                    <div class="card">
+                        <img src="./Img/Pepperoni Pizza.jpg" alt="Pepperoni Pizza">
+                        <h4>Pepperoni Pizza</h4>
+                        <p>Price: $12.99</p>
+                        <div class="quantity">
+                            <button class="decrease">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="increase">+</button>
+                        </div>
+                        <button class="add-to-cart" data-name="Pepperoni Pizza" data-price="12.99">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Mushroom Pizza.jpg" alt="Mushroom Pizza">
+                        <h4>Mushroom Pizza</h4>
+                        <p>Price: $10.99</p>
+                        <div class="quantity">
+                            <button class="decrease">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="increase">+</button>
+                        </div>
+                        <button class="add-to-cart" data-name="Mushroom Pizza" data-price="10.99">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Veggie Pizza.jpg" alt="Veggie Pizza">
+                        <h4>Veggie Pizza</h4>
+                        <p>Price: $11.49</p>
+                        <div class="quantity">
+                            <button class="decrease">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="increase">+</button>
+                        </div>
+                        <button class="add-to-cart" data-name="Veggie Pizza" data-price="11.49">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/BBQ Chicken Pizza.jpg" alt="BBQ Chicken Pizza">
+                        <h4>BBQ Chicken Pizza</h4>
+                        <p>Price: $13.49</p>
+                        <div class="quantity">
+                            <button class="decrease">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="increase">+</button>
+                        </div>
+                        <button class="add-to-cart" data-name="BBQ Chicken Pizza" data-price="13.49">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/Pepperoni Pizza.jpg" alt="Pepperoni Pizza">
+                        <h4>Pepperoni Pizza</h4>
+                        <p>Price: $12.99</p>
+                        <div class="quantity">
+                            <button class="decrease">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="increase">+</button>
+                        </div>
+                        <button class="add-to-cart" data-name="Pepperoni Pizza" data-price="12.99">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Mushroom Pizza.jpg" alt="Mushroom Pizza">
+                        <h4>Mushroom Pizza</h4>
+                        <p>Price: $10.99</p>
+                        <div class="quantity">
+                            <button class="decrease">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="increase">+</button>
+                        </div>
+                        <button class="add-to-cart" data-name="Mushroom Pizza" data-price="10.99">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Veggie Pizza.jpg" alt="Veggie Pizza">
+                        <h4>Veggie Pizza</h4>
+                        <p>Price: $11.49</p>
+                        <div class="quantity">
+                            <button class="decrease">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="increase">+</button>
+                        </div>
+                        <button class="add-to-cart" data-name="Veggie Pizza" data-price="11.49">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/BBQ Chicken Pizza.jpg" alt="BBQ Chicken Pizza">
+                        <h4>BBQ Chicken Pizza</h4>
+                        <p>Price: $13.49</p>
+                        <div class="quantity">
+                            <button class="decrease">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="increase">+</button>
+                        </div>
+                        <button class="add-to-cart" data-name="BBQ Chicken Pizza" data-price="13.49">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salads Category -->
+            <div class="menu-category" data-category="salads">
+                <h3>Salads</h3>
+                <div class="menu-items">
+                    <div class="card">
+                        <img src="./Img/Caesar Salad.jpg" alt="Caesar Salad">
+                        <h4>Caesar Salad</h4>
+                        <p>Price: $8.99</p>
+                        <button class="add-to-cart" data-name="Caesar Salad" data-price="8.99">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Greek Salad.jpg" alt="Greek Salad">
+                        <h4>Greek Salad</h4>
+                        <p>Price: $7.99</p>
+                        <button class="add-to-cart" data-name="Greek Salad" data-price="7.99">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Caprese Salad.jpg" alt="Caprese Salad">
+                        <h4>Caprese Salad</h4>
+                        <p>Price: $9.49</p>
+                        <button class="add-to-cart" data-name="Caprese Salad" data-price="9.49">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Cobb Salad.jpg" alt="Cobb Salad">
+                        <h4>Cobb Salad</h4>
+                        <p>Price: $9.99</p>
+                        <button class="add-to-cart" data-name="Cobb Salad" data-price="9.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/Caesar Salad.jpg" alt="Caesar Salad">
+                        <h4>Caesar Salad</h4>
+                        <p>Price: $8.99</p>
+                        <button class="add-to-cart" data-name="Caesar Salad" data-price="8.99">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Greek Salad.jpg" alt="Greek Salad">
+                        <h4>Greek Salad</h4>
+                        <p>Price: $7.99</p>
+                        <button class="add-to-cart" data-name="Greek Salad" data-price="7.99">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Caprese Salad.jpg" alt="Caprese Salad">
+                        <h4>Caprese Salad</h4>
+                        <p>Price: $9.49</p>
+                        <button class="add-to-cart" data-name="Caprese Salad" data-price="9.49">Add to Cart</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="./Img/Cobb Salad.jpg" alt="Cobb Salad">
+                        <h4>Cobb Salad</h4>
+                        <p>Price: $9.99</p>
+                        <button class="add-to-cart" data-name="Cobb Salad" data-price="9.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pasta Category -->
+            <div class="menu-category" data-category="pasta">
+                <h3>Pasta</h3>
+                <div class="menu-items">
+                    <div class="card">
+                        <img src="./Img/PASTA.jpg" alt="Spaghetti Carbonara">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Price: $10.99</p>
+                        <button class="add-to-cart" data-name="Spaghetti Carbonara" data-price="10.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/PASTA.jpg" alt="Spaghetti Carbonara">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Price: $10.99</p>
+                        <button class="add-to-cart" data-name="Spaghetti Carbonara" data-price="10.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/PASTA.jpg" alt="Spaghetti Carbonara">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Price: $10.99</p>
+                        <button class="add-to-cart" data-name="Spaghetti Carbonara" data-price="10.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/PASTA.jpg" alt="Spaghetti Carbonara">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Price: $10.99</p>
+                        <button class="add-to-cart" data-name="Spaghetti Carbonara" data-price="10.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/PASTA.jpg" alt="Spaghetti Carbonara">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Price: $10.99</p>
+                        <button class="add-to-cart" data-name="Spaghetti Carbonara" data-price="10.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/PASTA.jpg" alt="Spaghetti Carbonara">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Price: $10.99</p>
+                        <button class="add-to-cart" data-name="Spaghetti Carbonara" data-price="10.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/PASTA.jpg" alt="Spaghetti Carbonara">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Price: $10.99</p>
+                        <button class="add-to-cart" data-name="Spaghetti Carbonara" data-price="10.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/PASTA.jpg" alt="Spaghetti Carbonara">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Price: $10.99</p>
+                        <button class="add-to-cart" data-name="Spaghetti Carbonara" data-price="10.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks Category -->
+            <div class="menu-category" data-category="drinks">
+                <h3>Drinks</h3>
+                <div class="menu-items">
+                    <div class="card">
+                        <img src="./Img/Orange Juice.jpg" alt="Orange Juice">
+                        <h4>Orange Juice</h4>
+                        <p>Price: $4.99</p>
+                        <button class="add-to-cart" data-name="Orange Juice" data-price="4.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/Orange Juice.jpg" alt="Orange Juice">
+                        <h4>Orange Juice</h4>
+                        <p>Price: $4.99</p>
+                        <button class="add-to-cart" data-name="Orange Juice" data-price="4.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/Orange Juice.jpg" alt="Orange Juice">
+                        <h4>Orange Juice</h4>
+                        <p>Price: $4.99</p>
+                        <button class="add-to-cart" data-name="Orange Juice" data-price="4.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/Orange Juice.jpg" alt="Orange Juice">
+                        <h4>Orange Juice</h4>
+                        <p>Price: $4.99</p>
+                        <button class="add-to-cart" data-name="Orange Juice" data-price="4.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/Orange Juice.jpg" alt="Orange Juice">
+                        <h4>Orange Juice</h4>
+                        <p>Price: $4.99</p>
+                        <button class="add-to-cart" data-name="Orange Juice" data-price="4.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/Orange Juice.jpg" alt="Orange Juice">
+                        <h4>Orange Juice</h4>
+                        <p>Price: $4.99</p>
+                        <button class="add-to-cart" data-name="Orange Juice" data-price="4.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/Orange Juice.jpg" alt="Orange Juice">
+                        <h4>Orange Juice</h4>
+                        <p>Price: $4.99</p>
+                        <button class="add-to-cart" data-name="Orange Juice" data-price="4.99">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="./Img/Orange Juice.jpg" alt="Orange Juice">
+                        <h4>Orange Juice</h4>
+                        <p>Price: $4.99</p>
+                        <button class="add-to-cart" data-name="Orange Juice" data-price="4.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                        <!-- <button class="add-to-cart" data-name="Margherita Pizza" data-price="10.99">Add to Cart</button> -->
+                    </div>
+
+                   
+                </div>
+            </div>
+
+            <!-- Additional categories (Salads, Pasta, Drinks) follow the same format -->
+        </div>
+    </section>
+
+    <script>
+        // Get category from URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Function to show selected category
+        function filterMenu(category) {
+            document.querySelectorAll(".menu-category").forEach(section => {
+                section.style.display = section.getAttribute("data-category") === category ? "block" : "none";
+            });
+
+            document.querySelectorAll(".category-btn").forEach(button => {
+                button.classList.remove("active");
+                if (button.getAttribute("data-category") === category) {
+                    button.classList.add("active");
+                }
+            });
+        }
+
+        // Event listener for category buttons
+        document.querySelectorAll(".category-btn").forEach(button => {
+            button.addEventListener("click", function() {
+                filterMenu(this.getAttribute("data-category"));
+            });
+        });
+
+        // Automatically open category from URL
+        const categoryFromURL = getQueryParam("category");
+        filterMenu(categoryFromURL || "pizza");
+
+        // Quantity Increase & Decrease
+        document.querySelectorAll(".increase").forEach(button => {
+            button.addEventListener("click", function() {
+                let quantitySpan = this.parentElement.querySelector(".quantity-value");
+                quantitySpan.textContent = parseInt(quantitySpan.textContent) + 1;
+            });
+        });
+
+        document.querySelectorAll(".decrease").forEach(button => {
+            button.addEventListener("click", function() {
+                let quantitySpan = this.parentElement.querySelector(".quantity-value");
+                let currentQuantity = parseInt(quantitySpan.textContent);
+                if (currentQuantity > 1) {
+                    quantitySpan.textContent = currentQuantity - 1;
+                }
+            });
+        });
+
+        // Add to Cart
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", function() {
+                const itemName = this.getAttribute("data-name");
+                const itemPrice = this.getAttribute("data-price");
+                const quantity = parseInt(this.parentElement.querySelector(".quantity-value").textContent);
+
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                cart.push({ name: itemName, price: itemPrice, quantity: quantity });
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                alert(itemName + " added to cart!");
+            });
+        });
+    </script>
+
+</body>
+</html>

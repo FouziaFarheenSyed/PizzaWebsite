@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <img class="logo-img" src="./Img/Spicy Pepper Pizza.png" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="/aboutus.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search your pizza..." class="search-input">
+                <button class="search-btn" onclick="performSearch()">🔍</button>
+            </div>
+            <a href="#" class="purchase-btn">Purchase</a>
+            <div class="phone">Call Us: +1 234 567 890</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="landing">
+            <div class="pizza-container">
+                <img src="./Img/Mix Pizza.jpg" alt="Delicious Mixed Pizza" class="pizza-img rotating">
+            </div>
+            <div class="caption">
+                <h1>We Believe that a <br> Good Pizza Makes a Good Mood</h1>
+                <p>Freshly baked with the finest ingredients, our pizzas are made to satisfy your cravings.</p>
+                <a href="./menu.html" class="order-now">Order Now</a>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2>CATEGORIES</h2>
+            <div class="categories-container">
+                <div class="category">
+                    <a href="./menu.html?category=pizza">
+                        <img src="./Img/Group Pizza Pulling.jpg" alt="Group Pizza Sharing">
+                        <h3>PIZZA</h3>
+                        <p>10 items</p>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="./menu.html?category=drinks">
+                        <img src="./Img/COCKS.jpg" alt="Refreshing Drinks">
+                        <h3>DRINKS</h3>
+                        <p>8 items</p>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="./menu.html?category=pasta">
+                        <img src="./Img/PASTA.jpg" alt="Italian Pasta">
+                        <h3>PASTA</h3>
+                        <p>9 items</p>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="./menu.html?category=salads">
+                        <img src="./Img/SALADS.jpg" alt="Healthy Salads">
+                        <h3>SALADS</h3>
+                        <p>7 items</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">FAQs</a>
+            <a href="#">About</a>
+        </div>
+        <hr>
+        <p>© <span id="year"></span> Company, Inc</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        function performSearch() {
+            let query = document.getElementById("search-input").value.toLowerCase();
+            let validSearchTerms = ["pizza", "salad", "drink", "pasta"];
+            if (validSearchTerms.includes(query)) {
+                window.location.href = `menu.html?category=${query}`;
+            } else {
+                alert("Sorry, no results found! Try searching for Pizza, Salad, Pasta, or Drink.");
+            }
+        }
+    </script>
+
+</body>
+</html>
