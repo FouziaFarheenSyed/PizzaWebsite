@@ -21,9 +21,8 @@
             <li><a href="/contact.html">Contact</a></li>
         </ul>
         <div class="search-bar">
-            <input type="text" placeholder="Search" class="search-input">
-            <button class="search-button" onclick="searchPizza()">
-                <span class="search-icon">🔍</span>
+            <input type="text" id="search-bar" placeholder="Search for a category...">
+            <button onclick="searchCategory()">Search</button>            
             </button>
         </div>
         <a href="#" class="purchase-btn">Purchase</a>
@@ -119,6 +118,25 @@
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+        function searchCategory() {
+    let query = document.getElementById("search-bar").value.toLowerCase();
+    let categories = ["pizza", "pasta", "salads", "drinks"];
+
+    if (categories.includes(query)) {
+        window.location.href = "menu.html?category=" + query;
+    } else {
+        alert("Category not found! Please search for Pizza, Pasta, Salads, or Drinks.");
+    }
+}
+
+// Automatically show the category based on URL parameter
+document.addEventListener("DOMContentLoaded", function () {
+    const categoryFromURL = new URLSearchParams(window.location.search).get("category");
+    if (categoryFromURL) {
+        filterMenu(categoryFromURL);
+    }
+});
+
     </script>
 
 </body>

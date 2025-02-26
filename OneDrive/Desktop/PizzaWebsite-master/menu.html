@@ -21,8 +21,8 @@
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
             <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search your pizza..." class="search-input">
-                <button class="search-btn" onclick="performSearch()">🔍</button>
+                <input type="text" id="search-bar" placeholder="Search for a category...">
+                <button onclick="searchCategory()">Search</button>
             </div>
             <a href="#" class="purchase-btn">Purchase</a>
             <div class="phone">Call Us: +1 234 567 890</div>
@@ -310,14 +310,11 @@
                 </div>
             </div>
         </div>
-                        <!-- <button class="add-to-cart" data-name="Margherita Pizza" data-price="10.99">Add to Cart</button> -->
-                    </div>
+       </div>
+    </div>
+           </div>
 
-                   
-                </div>
-            </div>
-
-            <!-- Additional categories (Salads, Pasta, Drinks) follow the same format -->
+            
         </div>
     </section>
 
@@ -385,6 +382,25 @@
                 alert(itemName + " added to cart!");
             });
         });
+        function searchCategory() {
+    let query = document.getElementById("search-bar").value.toLowerCase();
+    let categories = ["pizza", "pasta", "salads", "drinks"];
+
+    if (categories.includes(query)) {
+        window.location.href = "menu.html?category=" + query;
+    } else {
+        alert("Category not found! Please search for Pizza, Pasta, Salads, or Drinks.");
+    }
+}
+
+// Automatically show the category based on URL parameter
+document.addEventListener("DOMContentLoaded", function () {
+    const categoryFromURL = new URLSearchParams(window.location.search).get("category");
+    if (categoryFromURL) {
+        filterMenu(categoryFromURL);
+    }
+});
+
     </script>
 
 </body>
