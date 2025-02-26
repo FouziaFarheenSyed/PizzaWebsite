@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="buynow.css">
+</head>
+<body>
+      <!-- nav bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="./index.html">
+                <img class="logo-img" src="./Img/purrrzaa.jpg" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="/aboutus.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search-bar" placeholder="Search for a category...">
+                <button onclick="searchCategory()">Search</button>            
+                </button>
+            </div>
+            <a href="./purchase.html" class="purchase-btn">Purchase</a>
+            <div class="phone">Call Us: +1 234 567 890</div>
+        </nav>
+
+
+        <!-- checkout  -->
+    <div class="container">
+        <h2>Checkout</h2>
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="pizza1.jpg" alt="Pizza">
+                <span>Pepperoni Pizza</span>
+                <span>$12.99</span>
+                <span>Qty: 2</span>
+            </div>
+            <div class="cart-item">
+                <img src="pizza2.jpg" alt="Pizza">
+                <span>Mushroom Pizza</span>
+                <span>$10.99</span>
+                <span>Qty: 1</span>
+            </div>
+        </div>
+        <div class="order-summary">
+            <p>Subtotal: $36.97</p>
+            <p>Tax: $2.99</p>
+            <p class="total">Total: $39.96</p>
+        </div>
+        <a href="./purchase.html" style="text-decoration: none;"><button class="checkout-btn">Proceed to Payment</button></a>
+    </div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get item details from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get("name");
+        const price = urlParams.get("price");
+        const quantity = urlParams.get("quantity");
+
+        if (name && price && quantity) {
+            document.querySelector(".cart-items").innerHTML = `
+                <div class="cart-item">
+                    <img src="./Img/pizza_placeholder.jpg" alt="${name}">
+                    <span><strong>${name}</strong></span>
+                    <span>Price: $${price}</span>
+                    <span>Qty: ${quantity}</span>
+                </div>
+            `;
+
+            // Calculate Total
+            let subtotal = (price * quantity).toFixed(2);
+            let tax = (subtotal * 0.08).toFixed(2); // Assuming 8% tax
+            let total = (parseFloat(subtotal) + parseFloat(tax)).toFixed(2);
+
+            document.querySelector(".order-summary").innerHTML = `
+                <p>Subtotal: $${subtotal}</p>
+                <p>Tax: $${tax}</p>
+                <p class="total">Total: $${total}</p>
+            `;
+        } else {
+            document.querySelector(".cart-items").innerHTML = "<p>No items selected.</p>";
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

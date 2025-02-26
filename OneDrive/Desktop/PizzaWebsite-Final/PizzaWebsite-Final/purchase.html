@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="/purchase.css">
+</head>
+<body>
+    <!-- nav bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="./index.html">
+                <img class="logo-img" src="./Img/purrrzaa.jpg" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="/aboutus.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search-bar" placeholder="Search for a category...">
+                <button onclick="searchCategory()">Search</button>            
+                </button>
+            </div>
+            <a href="./purchase.html" class="purchase-btn">Purchase</a>
+            <div class="phone">Call Us: +1 234 567 890</div>
+        </nav>
+
+    <!-- Payment Method  -->
+        <div class="payment-container">
+            <h2>Choose Your Payment Method</h2>
+    
+            <form id="payment-form">
+                <div class="payment-option">
+                    <input type="radio" name="payment-method" id="card" value="card" checked>
+                    <label for="card">Credit/Debit Card</label>
+                    <div class="card-details">
+                        <input type="text" id="card-number" placeholder="Card Number" required>
+                        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                        <input type="text" id="cvv" placeholder="CVV" required>
+                    </div>
+                </div>
+    
+                <div class="payment-option">
+                    <input type="radio" name="payment-method" id="paypal" value="paypal">
+                    <label for="paypal">PayPal</label>
+                </div>
+    
+                <div class="payment-option">
+                    <input type="radio" name="payment-method" id="cod" value="cod">
+                    <label for="cod">Cash on Delivery</label>
+                </div>
+    
+                <button class="button-pay" type="submit">Proceed to Pay</button>
+            </form>
+    
+            <div id="success-message" class="hidden">Payment Successful!</div>
+        </div>
+    
+        <script>
+            document.getElementById("payment-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+    
+                const selectedPayment = document.querySelector('input[name="payment-method"]:checked').value;
+                const successMessage = document.getElementById("success-message");
+    
+                if (selectedPayment === "card") {
+                    const cardNumber = document.getElementById("card-number").value;
+                    const expiryDate = document.getElementById("expiry-date").value;
+                    const cvv = document.getElementById("cvv").value;
+    
+                    if (!cardNumber || !expiryDate || !cvv) {
+                        alert("Please enter all card details.");
+                        return;
+                    }
+                }
+    
+                successMessage.classList.remove("hidden");
+    
+                setTimeout(() => {
+                    window.location.href = "order-success.html";
+                }, 3000);
+            });
+    
+            document.querySelectorAll('input[name="payment-method"]').forEach(input => {
+                input.addEventListener("change", function () {
+                    document.querySelector(".card-details").style.display = (this.value === "card") ? "block" : "none";
+                });
+            });
+        </script>
+    
+    
+    </body>
+    </html>
+    
+
+
+</body>
+</html>
