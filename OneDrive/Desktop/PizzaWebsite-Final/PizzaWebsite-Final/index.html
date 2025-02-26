@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -16,21 +15,28 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="/index.html">Home</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li><a href="./menu.html">Menu</a></li>
-                <li><a href="/aboutus.html">About</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="./aboutus.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
             <div class="search-bar">
                 <input type="text" id="search-bar" placeholder="Search for a category...">
                 <button onclick="searchCategory()">Search</button>
-
             </div>
             <a href="./buynow.html" class="buy-btn">Buy Now</a>
-            <a href="./contact.html"><div class="phone">Call Us: +1 234 567 890</div></a>
+            <div>
+                <a href="./contact.html" class="phone">Call Us: +1 234 567 89</a>
+            </div>
         </nav>
+        
     </header>
 
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="./Img/istockphoto-180617222-640_adpp_is.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="navbar-container"></div>
     <main>
         <section class="landing">
             <div class="pizza-container">
@@ -77,19 +83,17 @@
             </div>
         </section>
     </main>
-
     <footer>
         <div class="footer-links">
-            <a href="#">Home</a>
-            <a href="#">Features</a>
-            <a href="#">Pricing</a>
-            <a href="#">FAQs</a>
-            <a href="#">About</a>
+            <a href="./index.html">Home</a>
+            <a href="./menu.html">Menu</a>
+            <a href="./aboutus.html">About</a>
+            <a href="./contact.html">Contact</a>
         </div>
         <hr>
         <p>© <span id="year"></span> Company, Inc</p>
     </footer>
-
+    
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -113,15 +117,6 @@
         alert("Category not found! Please search for Pizza, Pasta, Salads, or Drinks.");
     }
 }
-
-// Automatically show the category based on URL parameter
-document.addEventListener("DOMContentLoaded", function () {
-    const categoryFromURL = new URLSearchParams(window.location.search).get("category");
-    if (categoryFromURL) {
-        filterMenu(categoryFromURL);
-    }
-});
-
     </script>
 
 </body>

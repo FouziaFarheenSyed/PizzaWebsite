@@ -8,6 +8,26 @@ body {
     text-align: center;
     color: #333;
 }
+        /* Background Video Styling */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* Places the video behind all content */
+}
+
+/* Content Styling */
+.content {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    z-index: 1; /* Ensures content is above video */
+    padding: 20px;
+}
 
 /* Navbar */
 .navbar {
@@ -278,31 +298,32 @@ button:hover {
     }
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #f5ac5f;
-    color: #6c757d;
-    font-size: 14px;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #6c757d;
-    margin: 0 15px;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: black;
-}
-
-hr {
-    width: 90%;
-    margin: 10px auto;
-    border: 0;
-    height: 1px;
-    background: #ddd;
-}
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f5ac5f;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: #6c757d;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: black;
+        }
+        
+        hr {
+            width: 90%;
+            margin: 10px auto;
+            border: 0;
+            height: 1px;
+            background: #ddd;
+        }
+        
