@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <img class="logo-img" src="./Img/Spicy Pepper Pizza.png" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./aboutus.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search-bar" placeholder="Search for a category...">
+                <button onclick="searchCategory()">Search</button>
+            </div>
+            <a href="./menu.html" class="buy-btn">Buy Now</a>
+            <div>
+                <a href="./contact.html" class="phone">Call Us: +1 234 567 89</a>
+            </div>
+        </nav>
+        
+    </header>
+
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="./Img/istockphoto-180617222-640_adpp_is.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="navbar-container"></div>
+    <main>
+        <section class="landing">
+            <div class="pizza-container">
+                <!-- <img src="./Img/Mix Pizza.jpg" alt="Delicious Mixed Pizza" class="pizza-img rotating"> -->
+            </div>
+            <div class="caption">
+                <h1>We Believe that a <br> Good Pizza Makes a Good Mood</h1>
+                <p>Freshly baked with the finest ingredients, our pizzas are made to satisfy your cravings.</p>
+                <a href="./menu.html" class="order-now">Order Now</a>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2>CATEGORIES</h2>
+            <div class="categories-container">
+                <div class="category">
+                    <a href="./menu.html?category=pizza">
+                        <img src="./Img/Group Pizza Pulling.jpg" alt="Group Pizza Sharing">
+                        <h3>PIZZA</h3>
+                        <p>10 items</p>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="./menu.html?category=drinks">
+                        <img src="./Img/COCKS.jpg" alt="Refreshing Drinks">
+                        <h3>DRINKS</h3>
+                        <p>8 items</p>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="./menu.html?category=pasta">
+                        <img src="./Img/PASTA.jpg" alt="Italian Pasta">
+                        <h3>PASTA</h3>
+                        <p>9 items</p>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="./menu.html?category=salads">
+                        <img src="./Img/SALADS.jpg" alt="Healthy Salads">
+                        <h3>SALADS</h3>
+                        <p>7 items</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- <hr style="color: black; background-color: aliceblue;"> -->
+    <article>
+        <section class="Offers-section">
+            <div class="Offers-wrapper">
+                <div class="Offer-box">
+                    <img class="Offers-img" src="./Img/Bellipiz.jpg" alt="Offer Image">
+                    <div class="Offers-container">
+                        <h1>BUY ONE GET ONE <br>50% OFF</h1>
+                        <p>On all pizzas, drinks, and pasta dishes</p>
+                        <a href="./menu.html" class="order-now">Order Now</a>
+                    </div>
+                </div>
+                <div class="Offer-box">
+                    <img class="Offers-img" src="./Img/Bellipiz.jpg" alt="Offer Image">
+                    <div class="Offers-container">
+                        <h1>FLAT 20% OFF</h1>
+                        <p>On orders above $30</p>
+                        <a href="./menu.html" class="order-now">Order Now</a>
+                    </div>
+                </div>
+                <div class="Offer-box">
+                    <img class="Offers-img" src="./Img/Bellipiz.jpg" alt="Offer Image">
+                    <div class="Offers-container">
+                        <h1>FREE DRINK</h1>
+                        <p>With every large pizza</p>
+                        <a href="./menu.html?category=drinks" class="order-now">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <footer>
+        <div class="footer-links">
+            <a href="./index.html">Home</a>
+            <a href="./menu.html">Menu</a>
+            <a href="./aboutus.html">About</a>
+            <a href="./contact.html">Contact</a>
+        </div>
+        <hr>
+        <p>© <span id="year"></span> Company, Inc</p>
+    </footer>
+    
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        function performSearch() {
+            let query = document.getElementById("search-input").value.toLowerCase();
+            let validSearchTerms = ["pizza", "salad", "drink", "pasta"];
+            if (validSearchTerms.includes(query)) {
+                window.location.href = `menu.html?category=${query}`;
+            } else {
+                alert("Sorry, no results found! Try searching for Pizza, Salad, Pasta, or Drink.");
+            }
+        }
+
+        function searchCategory() {
+    let query = document.getElementById("search-bar").value.toLowerCase();
+    let categories = ["pizza", "pasta", "salads", "drinks"];
+
+    if (categories.includes(query)) {
+        window.location.href = "menu.html?category=" + query;
+    } else {
+        alert("Category not found! Please search for Pizza, Pasta, Salads, or Drinks.");
+    }
+}
+    </script>
+
+</body>
+</html>

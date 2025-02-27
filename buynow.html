@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="./buynow.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="./index.html">
+                <img class="logo-img" src="./Img/money-bag.avif" alt="Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./aboutus.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <!-- <a href="./purchase.html" class="purchase-btn">Purchase</a> -->
+        <div class="phone">Call Us: +1 234 567 890</div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <div class="container">
+        <h2>Checkout</h2>
+        <div class="cart-items"></div>
+        <div class="order-summary">
+            <p>Subtotal: <span id="subtotal">$0.00</span></p>
+            <p>Tax: <span id="tax">$0.00</span></p>
+            <p class="total">Total: <span id="total">$0.00</span></p>
+        </div>
+        <button class="checkout-btn" >Proceed to Payment</button>
+    </div>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartContainer = document.querySelector(".cart-items");
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+                return;
+            }
+
+            let subtotal = 0;
+            cartContainer.innerHTML = "";
+
+            cart.forEach((item, index) => {
+                let itemPrice = (item.price * item.quantity).toFixed(2);
+                subtotal += parseFloat(itemPrice);
+                cartContainer.innerHTML += `
+                    <div class="cart-item">
+                        <img src="./Img/pizza_placeholder.jpg" alt="${item.name}">
+                        <span><strong>${item.name}</strong></span>
+                        <span>Price: $${item.price}</span>
+                        <span>Qty: ${item.quantity}</span>
+                        <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                    </div>
+                `;
+            });
+
+            let tax = (subtotal * 0.08).toFixed(2);
+            let total = (subtotal + parseFloat(tax)).toFixed(2);
+
+            document.getElementById("subtotal").textContent = `$${subtotal}`;
+            document.getElementById("tax").textContent = `$${tax}`;
+            document.getElementById("total").textContent = `$${total}`;
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadCart);
+
+        //For coming to this page from menu
+        document.addEventListener("DOMContentLoaded", function () {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartContainer = document.querySelector(".cart-items");
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+            return;
+        }
+
+        let subtotal = 0;
+        cartContainer.innerHTML = "";
+
+        cart.forEach((item, index) => {
+            let itemPrice = (item.price * item.quantity).toFixed(2);
+            subtotal += parseFloat(itemPrice);
+            cartContainer.innerHTML += `
+                <div class="cart-item">
+                    <img src="./Img/pizza_placeholder.jpg" alt="${item.name}">
+                    <span><strong>${item.name}</strong></span>
+                    <span>Price: $${item.price}</span>
+                    <span>Qty: ${item.quantity}</span>
+                    <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                </div>
+            `;
+        });
+
+        let tax = (subtotal * 0.08).toFixed(2);
+        let total = (subtotal + parseFloat(tax)).toFixed(2);
+
+        document.getElementById("subtotal").textContent = `$${subtotal}`;
+        document.getElementById("tax").textContent = `$${tax}`;
+        document.getElementById("total").textContent = `$${total}`;
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("🚀 buynow.html Loaded!");
+
+        // ✅ Function to redirect to purchase.html
+        function proceedToPayment() {
+            console.log("➡️ Redirecting to purchase.html...");
+            setTimeout(() => {
+                window.location.href = "purchase.html";  // Redirect to the payment page
+            }, 500);
+        }
+
+        // ✅ Attach event listener to "Proceed to Payment" button
+        document.querySelector(".checkout-btn").addEventListener("click", proceedToPayment);
+
+        console.log("✔ Proceed to Payment Button Attached!");
+    });
+    </script>
+
+</body>
+</html>
